@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>App Sécurité</title>
+
+    <!-- Lien CSS Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1> Sécurité & Chiffrement</h1>
+
+    <form method="POST">
+
+        <label>Texte 1 :</label>
+<input type="text" name="texte1">
+
+<label>Texte 2 :</label>
+<input type="text" name="texte2">
+
+<label>Clé :</label>
+<input type="number" name="cle">
+
+<button name="action" value="chiffrer1">Chiffrer Texte 1</button>
+<button name="action" value="chiffrer2">Chiffrer Texte 2</button>
+
+<button name="action" value="sha1">SHA Texte 1</button>
+<button name="action" value="sha2">SHA Texte 2</button>
+
+<button name="action" value="comparer">Comparer</button>
+<button name="action" value="chiffrer_both"> Chiffrer les deux textes</button>
+        </div>
+
+    </form>
+
+    {% if result %}
+        <div class="result">
+            {{ result }}
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
